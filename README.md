@@ -1,1 +1,1 @@
-# INFT1016-Manbindra
+# INFT1016-Mabindra
