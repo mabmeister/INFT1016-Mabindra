@@ -1,4 +1,4 @@
 # INFT1016-Mabindra
 
-Hellow Haneen 
+Hello Haneen 
 We are in Week 9!!!
