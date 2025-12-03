@@ -39,10 +39,12 @@ Here's an unordered list, with:
 
 Inline code: make `this word` inline
 
-```Format this text as code.
+```
+Format this text as code.
 
 
 
 def foo():
     if not bar:
-        return True```
+        return True
+```
