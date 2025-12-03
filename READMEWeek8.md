@@ -29,7 +29,6 @@ Here's an unordered list, with:
 <ul>
  
  Here's an ordered list, with:
-
 <ol>
     <li>Item one
     <li>Item two
