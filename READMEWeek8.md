@@ -23,10 +23,10 @@ Here's an unordered list, with:
     <li>Two item<li>
     <li>Three item<li>
 <ul>
-    <ul>
+<ul>
         <li>Sub-item one!<li>
-            <li>Sub-item two!<li>
-    <ul>
+        <li>Sub-item two!<li>
+<ul>
  
  Here's an ordered list, with:
 
