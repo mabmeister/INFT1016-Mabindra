@@ -44,7 +44,8 @@ Format this text as code.
 
 
 
-```def foo():
+```
+def foo():
     if not bar:
         return True
 ```
