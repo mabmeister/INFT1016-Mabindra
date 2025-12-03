@@ -19,9 +19,9 @@ This is another paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing el
 
 Here's an unordered list, with:
 <ul>
-    <li>One item<li>
-    <li>Two item<li>
-    <li>Three item<li>
+    <li>One item
+    Two item
+    Three item<li>
     <ul>
         <li>Sub-item one!<li>
             <li>Sub-item two!<li>
