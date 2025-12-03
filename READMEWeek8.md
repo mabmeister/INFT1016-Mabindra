@@ -37,4 +37,6 @@ Here's an unordered list, with:
 
 > This is a block quote. It should be in block quotes! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-Inline code: make > this word inline
+Inline code: make `this word` inline
+
+Format this text as code.
