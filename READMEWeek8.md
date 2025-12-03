@@ -16,3 +16,21 @@ This is another paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing el
 **This text is bold**
 
 ***This text is bold and italic***
+
+Here's an unordered list, with:
+<ul>
+    <li>One item<li>
+    <li>Two item<li>
+    <li>Three item<li>
+    <ul>
+        <li>Sub-item one!<li>
+            <li>Sub-item two!<li>
+<ul>
+ 
+ Here's an ordered list, with:
+
+<ol>
+    <li>Item one<li>
+    <li>Item two<li>
+    <li>Item Three<li>
+<ol>
