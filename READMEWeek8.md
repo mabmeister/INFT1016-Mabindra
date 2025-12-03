@@ -19,19 +19,19 @@ This is another paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing el
 
 Here's an unordered list, with:
 <ul>
-    <li>One item<li>
-    <li>Two item<li>
-    <li>Three item<li>
+    <li>One item<
+    <li>Two item
+    <li>Three item<
 <ul>
 <ul>
-        <li>Sub-item one!<li>
-        <li>Sub-item two!<li>
+        <li>Sub-item one!
+        <li>Sub-item two!
 <ul>
  
  Here's an ordered list, with:
 
 <ol>
-    <li>Item one<li>
-    <li>Item two<li>
-    <li>Item Three<li>
+    <li>Item one
+    <li>Item two
+    <li>Item Three
 <ol>
