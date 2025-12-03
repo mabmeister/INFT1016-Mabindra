@@ -27,14 +27,12 @@ Here's an unordered list, with:
         <li>Sub-item one!
         <li>Sub-item two!
 <ul>
- 
  Here's an ordered list, with:
 <ol>
     <li>Item one
     <li>Item two
     <li>Item Three
 <ol>
-
 > This is a block quote. It should be in block quotes! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Inline code: make `this word` inline
