@@ -14,3 +14,36 @@
 <a href="#" onclick = 
 "document.getElementById('box').innerHTML = 'You clicked it!';">
 Click me </a>
+'<li>The link was pressed 1 times.</li>' 
+<!DOCTYPE html>
+<html>
+    <head>
+     <script type='text/javascript' src='YourScript.js'></script>
+    </head>
+<body>
+</body>
+</html>
+<html>
+<head>
+    <title>Week 11</title>
+
+    <script>
+        counter = 0;
+
+        function countClicks() {
+            counter = counter + 1;
+            var output = 'The link was pressed ' + counter + ' times.';
+            var element = document.getElementById('boxy');
+            element.innerHTML = output;
+        }
+    </script>
+
+</head>
+<body>
+    <h1>JavaScript Demo</h1>
+    <a href="#" onclick="countClicks();">Click me</a>
+    <p id="boxy"></p>
+</body>
+</html>
+<a href="#" onclick="countClicks();">Click me</a>
+<a href="#" onclick="this.innerHTML = 'Clicked';"></a>
