@@ -1,1 +1,71 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alec B's Life at UNISA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Alec B's Life at UNISA</h1>
+        <p id="date-time"></p>
+        <h2 class="welcome-text">Welcome, <span id="user-name">Omer</span>!</h2>
+        
+        <button onclick="toggleTheme()" id="theme-btn">Toggle Theme</button>
+        
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#interests">Interests</a>
+            <a href="#learning">Learning Goals</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="input-group">
+                <input type="text" id="name-input" placeholder="Enter your name">
+                <button onclick="applyName()">Apply</button>
+            </div>
+
+            <h3>My time as a first year student studying IT</h3>
+            <p>My first year has been pretty interesting getting to learn about the different parts of a computer and learning to code HTML.</p>
+            
+            <h4>Subsection</h4>
+            <p>While its taken a bit and has been a little confusing to learn html language...</p>
+            
+            <div class="image-placeholder">
+                            </div>
+        </section>
+
+        <hr>
+
+        <section id="learning">
+            <h3>Learning Goals To Do List</h3>
+            <div class="access-box">
+                <p>Access To Do List</p>
+                <input type="password" placeholder="Enter password">
+                <button>Submit</button>
+            </div>
+
+            <div class="todo-container">
+                <p>The To Do List</p>
+                <input type="text" id="goal" placeholder="Learning Goal">
+                <input type="text" id="timeframe" placeholder="Timeframe">
+                <button onclick="addTask()">Add Task</button>
+                <div class="controls">
+                    <button>Save List</button>
+                    <button>Load List</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alec Bruggemann. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
