@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage Assignment</title>
-    <link rel="stylesheet" href="base.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eynesbury College</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Webpage Assignment</h1>
-        <h2 class="welcome-text">Welcome, <span id="user-name">Guest</span>!</h2>
-        
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Courses</a>
-            <a href="#">Goals</a>
-        </nav>
-    </header>
+  <!-- Navigation -->
+  <header>
+    <nav class="nav-container">
+      <h1>Eynesbury College</h1>
+      <ul class="nav-links">
+        <li><a href="webpage.html">Home</a></li>
+        <li><a href="course.html">Courses</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <div class="input-group">
-            <input type="text" id="name-input" placeholder="Enter your name">
-            <button onclick="applyName()">Apply</button>
-        </div>
+  <!-- Main Content -->
+  <main>
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <h1 id="welcome-heading">Hello, Guest!</h1>
+      <div class="name-input">
+        <input type="text" id="username" placeholder="Enter your name!">
+        <button id="apply-name">Apply!</button>
+      </div>
+      <p><strong>Current Date & Time:</strong> <span id="current-datetime"></span></p>
+    </section>
 
-        <section id="home">
-            <h3>My time as a first semester student studying IT</h3>
-            <p>I am learning about different parts of a computer and programming languages.</p>
-            
-            <div class="button-row">
-                <button onclick="showImage()">Show Image</button>
-                <button onclick="toggleTheme()" id="theme-btn">Switch to Dark Mode</button>
-            </div>
+    <!-- About Section -->
+    <section class="about-section">
+      <h2>About This Trimester at Eynesbury College</h2>
+      <p>
+        Welcome to Trimester 1, 2026 at Eynesbury College! This trimester we are focusing on building 
+        strong foundations in web development and programming. Students will learn essential skills 
+        including HTML, CSS, JavaScript, and modern development practices.
+      </p>
+      <p>
+        Located in Adelaide, South Australia, Eynesbury College provides pathway programs for students 
+        aiming to enter Australian universities. Our hands-on approach ensures students gain practical 
+        experience while developing their theoretical knowledge.
+      </p>
+    </section>
 
-            <img id="artImage" src="" alt="Artwork" style="display:none; width:300px; margin: 20px auto; border-radius: 10px;">
-            <p id="artDescription" style="font-weight: bold;"></p>
-        </section>
-    </main>
+    <!-- Wildlife Gallery -->
+    <section class="wildlife-gallery">
+      <h2>Australian Wildlife Gallery</h2>
+      <div class="gallery-buttons">
+        <button id="kangaroo-btn">Kangaroo</button>
+        <button id="koala-btn">Koala</button>
+      </div>
+      <div class="gallery-display">
+        <img id="wildlife-image" src="https://images.pexels.com/photos/802112/pexels-photo-802112.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kangaroo">
+        <p id="wildlife-text">
+          The kangaroo is a marsupial from the family Macropodidae. They are indigenous to Australia and are known for their powerful hind legs and distinctive hopping movement.
+        </p>
+        <a id="wildlife-link" href="https://www.pexels.com/photo/brown-kangaroo-802112/" target="_blank">View image source on Pexels</a>
+      </div>
+    </section>
+
+    <!-- Theme Toggle -->
+    <section class="theme-toggle">
+      <button id="toggle-theme">Toggle Theme (🌙 Dark)</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Images from <a href="https://www.pexels.com" target="_blank">Pexels</a> - Free to use</p>
+    <p>© 2026 Eynesbury College - Web Development Assignment</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
