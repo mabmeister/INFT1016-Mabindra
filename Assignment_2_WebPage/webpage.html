@@ -3,49 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage Assignment </title>
-    <link rel="stylesheet" href="base.css"
-    <script defer src="style.js"></script>
+    <title>Webpage Assignment</title>
+    <link rel="stylesheet" href="base.css">
+    <script defer src="script.js"></script>
 </head>
-
-<body></body>
+<body>
     <header>
-        <h1>Webpage Assignment </h1>
-        <p id="date-time"></p>
-        <h2 class="welcome-text">Welcome, <span id="user-name"></span>!</h2>
-        
-        <button onclick="toggleTheme()" id="theme-btn">Toggle Theme</button>
+        <h1>Webpage Assignment</h1>
+        <h2 class="welcome-text">Welcome, <span id="user-name">Guest</span>!</h2>
         
         <nav>
-            <a href="#home">Home</a>
-            <a href="#Courses">Courses</a>
-            <a href="#learning">Learning Goals</a>
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">Goals</a>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <div class="input-group">
-                <input type="text" id="name-input" placeholder="Enter your name">
-                <button onclick="applyName()">Apply</button>
-            </div>
+        <div class="input-group">
+            <input type="text" id="name-input" placeholder="Enter your name">
+            <button onclick="applyName()">Apply</button>
+        </div>
 
+        <section id="home">
             <h3>My time as a first semester student studying IT</h3>
-            <p>My first semester has been pretty interesting getting to learn about the different parts of a computer and learning more program language.</p>
+            <p>I am learning about different parts of a computer and programming languages.</p>
             
             <div class="button-row">
-                <button> onclick="showImage()"> Show image</button>
-                <button onclick="showDescription()">Show Description</button>
+                <button onclick="showImage()">Show Image</button>
+                <button onclick="toggleTheme()" id="theme-btn">Switch to Dark Mode</button>
             </div>
-            <img id="artImage" src="" alt="Artwork" style="display:none;">
+
+            <img id="artImage" src="" alt="Artwork" style="display:none; width:300px; margin: 20px auto; border-radius: 10px;">
+            <p id="artDescription" style="font-weight: bold;"></p>
         </section>
     </main>
-</html><body>
-    
-    <script src="script.js"></script>
 </body>
 </html>
-
-<div class="theme-container">
-    <button onclick="toggleTheme()" id="theme-btn">Switch to Dark Mode</button>
-</div>
