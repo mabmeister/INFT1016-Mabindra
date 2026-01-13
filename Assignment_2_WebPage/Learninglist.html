@@ -1,25 +1,89 @@
-</body>
-    <main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Goals - Eynesbury College</title>
+    <style>
+        /* 1. Theme Variables */
+        :root {
+            --bg: #ffffff;
+            --text: #333333;
+            --primary: #004a99; /* College Blue */
+            --card-bg: #f9f9f9;
+        }
 
-        <hr>
+        body.dark-mode {
+            --bg: #121212;
+            --text: #f4f4f4;
+            --primary: #4da6ff;
+            --card-bg: #1e1e1e;
+        }
 
-        <section id="learning">
-            <h3>Learning Goals To Do List</h3>
-            <div class="access-box">
-                <p>Access To Do List</p>
-                <input type="password" placeholder="Enter password">
-                <button>Submit</button>
-            </div>
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            transition: 0.3s;
+            text-align: center;
+        }
 
-            <div class="todo-container">
-                <p>The To Do List</p>
-                <input type="text" id="goal" placeholder="Learning Goal">
-                <input type="text" id="timeframe" placeholder="Timeframe">
-                <button onclick="addTask()">Add Task</button>
-                <div class="controls">
-                    <button>Save List</button>
-                    <button>Load List</button>
-                </div>
-            </div>
-        </section>
-    </main>
+        header {
+            background-color: #004a99;
+            color: white;
+            padding: 1rem;
+        }
+
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+
+        /* 2. Password Box Styling */
+        #password-screen {
+            margin-top: 100px;
+        }
+
+        input {
+            padding: 12px;
+            width: 250px;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* 3. Subject List Styling */
+        #content-screen { display: none; }
+        
+        .subject-card {
+            background-color: var(--card-bg);
+            border-left: 5px solid var(--primary);
+            margin: 15px 0;
+            padding: 20px;
+            text-align: left;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .error { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Eynesbury College</h1>
+    </header>
+
+    <div class="container">
+        <div id="password-screen">
+            <h2>Learning Goals Access</h2>
+            <p>Please enter the password to see the subjects.</p>
+            <input type="password"
