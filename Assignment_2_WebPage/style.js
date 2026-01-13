@@ -63,7 +63,7 @@ function displayDateTime() {
 
 // Show Kangaroo image
 function showKangaroo() {
-    document.getElementById('galleryImage').src = 'https://images.pexels.com/photos/635499/pexels-photo-635499.jpeg?auto=compress&cs=tinysrgb&w=600';
+    document.getElementById('galleryImage').src = 'photos/Kang.jpg';
     document.getElementById('galleryImage').alt = 'Kangaroo';
     document.getElementById('galleryDescription').innerHTML = 'The kangaroo is a marsupial from Australia known for its powerful hind legs and hopping movement. They are iconic symbols of Australian wildlife.';
     document.getElementById('galleryLink').href = 'https://www.pexels.com/photo/kangaroo-on-green-grass-field-635499/';
@@ -71,7 +71,7 @@ function showKangaroo() {
 
 // Show Koala image
 function showKoala() {
-    document.getElementById('galleryImage').src = 'https://images.pexels.com/photos/1259447/pexels-photo-1259447.jpeg?auto=compress&cs=tinysrgb&w=600';
+    document.getElementById('galleryImage').src = 'photos/Koala.jpg';
     document.getElementById('galleryImage').alt = 'Koala';
     document.getElementById('galleryDescription').innerHTML = 'The koala is an arboreal herbivorous marsupial native to Australia. Known for sleeping up to 22 hours a day, they feed almost exclusively on eucalyptus leaves.';
     document.getElementById('galleryLink').href = 'https://www.pexels.com/photo/close-up-photo-of-koala-bear-1259447/';
