@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Eynesbury College</title>
+    <meta name="description" content="First trimester courses at Eynesbury College">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="initPage()">
+    <header>
+        <nav>
+            <div class="nav-brand">Eynesbury College</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+            </ul>
+            <button id="themeToggle" onclick="toggleTheme()">Toggle Theme</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="courses-header">
+            <h1>First Trimester Courses</h1>
+            <p>Explore the courses available this trimester at Eynesbury College.</p>
+        </section>
+
+        <section class="courses-grid">
+            <article class="course-card">
+                <h2>Introduction to Programming</h2>
+                <p class="course-code">Code: PROG101</p>
+                <p>Learn the fundamentals of programming with hands-on exercises. This course covers variables, loops, functions, and basic problem-solving techniques.</p>
+            </article>
+
+            <article class="course-card">
+                <h2>Web Development Fundamentals</h2>
+                <p class="course-code">Code: WEB102</p>
+                <p>Master the basics of HTML, CSS, and JavaScript to build interactive websites. Includes responsive design and modern web practices.</p>
+            </article>
+
+            <article class="course-card">
+                <h2>Database Management</h2>
+                <p class="course-code">Code: DATA103</p>
+                <p>Understand database concepts, SQL queries, and data management principles. Learn to design and implement efficient database systems.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Eynesbury College. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
