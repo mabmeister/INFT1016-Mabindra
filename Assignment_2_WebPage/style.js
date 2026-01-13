@@ -1,4 +1,3 @@
-// Initialize page on load
 function initPage() {
     loadTheme();
     loadUsername();
