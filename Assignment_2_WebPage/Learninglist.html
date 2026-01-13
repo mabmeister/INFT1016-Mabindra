@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Goals Access</title>
+    <title>Eynesbury College - Learning Goals</title>
     <style>
         :root {
             --bg: #f0f2f5;
@@ -11,6 +11,7 @@
             --box-bg: #ffffff;
             --primary: #004a99;
             --border: #ccc;
+            --nav-bg: #004a99;
         }
 
         body.dark-mode {
@@ -18,24 +19,55 @@
             --text: #f4f4f4;
             --box-bg: #2d2d2d;
             --border: #444;
+            --nav-bg: #002b5c;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text);
             font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            background-color: var(--nav-bg);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover { text-decoration: underline; }
+
+        /* Layout Containers */
+        .main-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            transition: 0.3s;
+            flex-grow: 1;
+            width: 100%;
+            min-height: 80vh;
         }
 
         /* The Password Box */
         .login-box {
             background: var(--box-bg);
-            padding: 30px;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
@@ -49,25 +81,24 @@
             margin: 15px 0;
             border: 1px solid var(--border);
             border-radius: 6px;
-            box-sizing: border-box; /* Keeps padding inside the width */
+            box-sizing: border-box;
         }
 
-        button {
-            width: 100%;
-            padding: 12px;
+        .btn {
+            padding: 12px 24px;
             background-color: var(--primary);
             color: white;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 16px;
             font-weight: bold;
+            transition: 0.2s;
         }
 
-        button:hover { opacity: 0.9; }
+        .btn:hover { opacity: 0.8; transform: scale(1.02); }
 
-        /* The Subject Table */
-        #content-screen { display: none; width: 90%; max-width: 800px; }
+        /* Subject Table */
+        #content-screen { display: none; width: 90%; max-width: 900px; padding: 20px; }
 
         table {
             width: 100%;
@@ -76,59 +107,64 @@
             margin-top: 20px;
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border); }
         th { background-color: var(--primary); color: white; }
 
-        .error { color: #ff4d4d; font-size: 14px; margin-bottom: 10px; }
-        
-        .theme-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: auto;
-            padding: 8px 15px;
+        .controls {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            box-sizing: border-box;
         }
+
+        .error { color: #ff4d4d; font-size: 14px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
-    <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
+    <nav>
+        <a href="webpage.html">Home</a>
+        <a href="course.html">Courses</a>
+        <a href="#">Learning Goals</a>
+    </nav>
 
-    <div id="password-screen" class="login-box">
-        <h2 style="color: var(--primary);">Protected Area</h2>
-        <p>Please enter password to view subjects</p>
-        <div id="error-msg" class="error"></div>
-        <input type="password" id="pass-input" placeholder="Password">
-        <button onclick="checkPassword()">Access Goals</button>
+    <div class="controls">
+        <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
     </div>
 
-    <div id="content-screen">
-        <h2 style="text-align: center;">My Learning Goals</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Subject Name</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody id="subject-rows">
-                </tbody>
-        </table>
+    <div class="main-content">
+        <div id="password-screen" class="login-box">
+            <h2 style="color: var(--primary);">Secure Login</h2>
+            <p>Enter password to view your subjects</p>
+            <div id="error-msg" class="error"></div>
+            <input type="password" id="pass-input" placeholder="Password">
+            <button class="btn" onclick="checkPassword()">View Subjects</button>
+        </div>
+
+        <div id="content-screen">
+            <h2 style="text-align: center;">My Learning Goals</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject Name</th>
+                        <th>Core Description</th>
+                    </tr>
+                </thead>
+                <tbody id="subject-rows"></tbody>
+            </table>
+        </div>
     </div>
 
     <script>
         const subjects = [
-            { name: "IT Fundamentals", desc: "Hardware, software, and IT systems." },
-            { name: "Design Thinking", desc: "Creative problem-solving methods." },
-            { name: "Programming", desc: "Logic and coding for real-world problems." },
-            { name: "Networking", desc: "Protocols and connectivity basics." }
+            { name: "IT Fundamentals", desc: "Computer hardware, operating systems, and basic software concepts." },
+            { name: "Design Thinking Studio", desc: "Solving human problems through creative prototyping and testing." },
+            { name: "Programming", desc: "Learning Python/JavaScript logic to solve computational problems." },
+            { name: "Network Fundamentals", desc: "Understanding how the internet and local networks connect devices." }
         ];
 
         function checkPassword() {
@@ -139,7 +175,6 @@
                 document.getElementById("password-screen").style.display = "none";
                 document.getElementById("content-screen").style.display = "block";
                 
-                // Build the table rows
                 const tableBody = document.getElementById("subject-rows");
                 tableBody.innerHTML = subjects.map(s => `
                     <tr>
