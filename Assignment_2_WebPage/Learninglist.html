@@ -3,87 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Goals - Eynesbury College</title>
+    <title>Learning Goals Access</title>
     <style>
-        /* 1. Theme Variables */
         :root {
-            --bg: #ffffff;
-            --text: #333333;
-            --primary: #004a99; /* College Blue */
-            --card-bg: #f9f9f9;
+            --bg: #f0f2f5;
+            --text: #333;
+            --box-bg: #ffffff;
+            --primary: #004a99;
+            --border: #ccc;
         }
 
         body.dark-mode {
-            --bg: #121212;
+            --bg: #1a1a1a;
             --text: #f4f4f4;
-            --primary: #4da6ff;
-            --card-bg: #1e1e1e;
+            --box-bg: #2d2d2d;
+            --border: #444;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text);
             font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
             transition: 0.3s;
+        }
+
+        /* The Password Box */
+        .login-box {
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
+            width: 350px;
+            border: 1px solid var(--border);
         }
 
-        header {
-            background-color: #004a99;
-            color: white;
-            padding: 1rem;
-        }
-
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-
-        /* 2. Password Box Styling */
-        #password-screen {
-            margin-top: 100px;
-        }
-
-        input {
+        input[type="password"] {
+            width: 100%;
             padding: 12px;
-            width: 250px;
-            border: 2px solid var(--primary);
-            border-radius: 5px;
-            outline: none;
+            margin: 15px 0;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            box-sizing: border-box; /* Keeps padding inside the width */
         }
 
         button {
-            padding: 12px 24px;
+            width: 100%;
+            padding: 12px;
             background-color: var(--primary);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 16px;
             font-weight: bold;
         }
 
-        /* 3. Subject List Styling */
-        #content-screen { display: none; }
-        
-        .subject-card {
-            background-color: var(--card-bg);
-            border-left: 5px solid var(--primary);
-            margin: 15px 0;
-            padding: 20px;
-            text-align: left;
+        button:hover { opacity: 0.9; }
+
+        /* The Subject Table */
+        #content-screen { display: none; width: 90%; max-width: 800px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--box-bg);
+            margin-top: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        .error { color: red; margin-top: 10px; }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th { background-color: var(--primary); color: white; }
+
+        .error { color: #ff4d4d; font-size: 14px; margin-bottom: 10px; }
+        
+        .theme-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: auto;
+            padding: 8px 15px;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Eynesbury College</h1>
-    </header>
+    <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
 
-    <div class="container">
-        <div id="password-screen">
-            <h2>Learning Goals Access</h2>
-            <p>Please enter the password to see the subjects.</p>
-            <input type="password"
+    <div id="password-screen" class="login-box">
+        <h2 style="color: var(--primary);">Protected Area</h2>
+        <p>Please enter password to view subjects</p>
+        <div id="error-msg" class="error"></div>
+        <input type="password" id="pass-input" placeholder="Password">
+        <button onclick="checkPassword()">Access Goals</button>
+    </div>
+
+    <div id="content-screen">
+        <h2 style="text-align: center;">My Learning Goals</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="subject-rows">
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        const subjects = [
+            { name: "IT Fundamentals", desc: "Hardware, software, and IT systems." },
+            { name: "Design Thinking", desc: "Creative problem-solving methods." },
+            { name: "Programming", desc: "Logic and coding for real-world problems." },
+            { name: "Networking", desc: "Protocols and connectivity basics." }
+        ];
+
+        function checkPassword() {
+            const userInput = document.getElementById("pass-input").value;
+            const errorDiv = document.getElementById("error-msg");
+
+            if (userInput === "Haneen") {
+                document.getElementById("password-screen").style.display = "none";
+                document.getElementById("content-screen").style.display = "block";
+                
+                // Build the table rows
+                const tableBody = document.getElementById("subject-rows");
+                tableBody.innerHTML = subjects.map(s => `
+                    <tr>
+                        <td><strong>${s.name}</strong></td>
+                        <td>${s.desc}</td>
+                    </tr>
+                `).join('');
+            } else {
+                errorDiv.innerText = "❌ Incorrect Password";
+            }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
