@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eynesbury College - First Trimester</title>
+    <meta name="description" content="Eynesbury College website showcasing first trimester courses and information">
+    <link rel="stylesheet" href="base.css">
+</head>
+<body onload="initPage()">
+    <header>
+        <nav>
+            <div class="nav-brand">Mabmeister College</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="course.html">Courses</a></li>
+                <li><a href="Learninglist.html">Learning Goals</a></li>
+            </ul>
+            <button id="themeToggle" onclick="toggleTheme()">Toggle Theme</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h1 id="greeting">Hello, Guest!</h1>
+            <p id="dateTime"></p>
+        </section>
+
+        <!-- Name Input Section -->
+        <section class="name-input-section">
+            <h2>Enter Your Name</h2>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Enter your name!">
+                <button onclick="updateGreeting()">Apply!</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About Eynesbury College</h2>
+            <p>Welcome to Eynesbury College! We are committed to providing quality education and preparing students for success in their academic and professional journeys. This trimester, we offer a variety of courses designed to build your skills and knowledge.</p>
+        </section>
+
+        <!-- Interactive Image Gallery -->
+        <section class="gallery-section">
+            <h2>Australian Wildlife Gallery</h2>
+            <div class="gallery-buttons">
+                <button onclick="showKangaroo()">Kangaroo</button>
+                <button onclick="showKoala()">Koala</button>
+            </div>
+            <div class="gallery-content">
+                <img id="galleryImage" src="photos/Kang.jpg" alt="Australian Wildlife">
+                <p id="galleryDescription">The kangaroo is a marsupial from Australia known for its powerful hind legs and hopping movement. They are iconic symbols of Australian wildlife.</p>
+                <p><a href="/Users/mabindramoktan/Downloads/Kang.jpg" target="_blank"></a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025/2026 - Mabindra Bahadur Moktan Eynesbury College. All rights reserved.</p>
+    </footer>
+    <script src="style.js"></script>
+</body>
+</html>
+\
